@@ -208,7 +208,7 @@
       <hr class="center" style="width: 300px; margin-bottom: 50px; border-top: 5px solid black">
       <div class="row">
         <div class="col m7 12">
-          <form action="adapter_form_kontak.php" method="post">>
+          <form action="adapter_form_kontak.php" method="post">
             <div class="card-panel">
               <div class="input-field">
                 <input type="email" name="emailKontak" class="validate">
