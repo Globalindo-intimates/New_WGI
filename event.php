@@ -61,12 +61,17 @@
             <?php
             include "connection.php";
 
-            $kolom = 4;
-            $i = 0;
+            $kolom = 2;
+            $i = 1;
             $upload_dir = 'img/even/';
             $sqlEvent = "SELECT * FROM tabel_event ORDER BY idEvent";
             $rsltEvent = mysqli_query($kon, $sqlEvent);
             while ($dataEvent = mysqli_fetch_array($rsltEvent)) {
+                $namaEv = $dataEvent['namaEvent'];
+                $tglEv = $dataEvent['tanggalEvent'];
+                $deskEv = $dataEvent['deskripsiEvent'];
+
+
                 // require_once ('resizeImage.php');
                 // $resize = new ResizeImage($upload_dir . $data["fotoProduk"]);
                 // $resize->resizeTo(100,100,'exact');
@@ -78,21 +83,21 @@
                 }
                 echo  '<tr><img class="modal-trigger waves-effect" width="200px" style="border-style: solid;
                 border-width: 2px;
-                border-color:black; margin: 20px;" href="#modal1" src=' . $upload_dir . $dataEvent["fotoEvent"].'>';
+                border-color:black; margin: 20px;" href="#modal1" src=' . $upload_dir . $dataEvent["fotoEvent"].'>''<h3>'. $namaEv .'</h3>';
                 
-                echo  '<div id="modal1" class="modal modal-fixed-footer">';
-                echo  '<div class="modal-content">';
-                echo  '<h3>'. $dataEvent['namaEvent'] .'</h3>';
-                echo  '<h7>'. $dataEvent['tanggalEvent'] .'</h7>';
-                echo  '<p>'. $dataEvent['deskripsiEvent'] .'</p>';
-                echo  '</div>';
-                echo  '<div class="modal-footer">';
-                echo  '<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>';
-                echo  '</div>';
-                echo  '</div>';
+                // echo  '<div id="modal1" class="modal modal-fixed-footer">';
+                // echo  '<div class="modal-content">';
+                echo  ;
+                echo  '<h7>'. $tglEv .'</h7>';
+                echo  '<p>'. $deskEv.'</p>';
+                // echo  '</div>';
+                //echo  '<div class="modal-footer">';
+               // echo  '<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>';
+                // echo  '</div>';
+               // echo  '</div>';
 
 
-
+                
 
 
                 if (($i) % $kolom == 0) {

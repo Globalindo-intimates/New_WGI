@@ -136,7 +136,9 @@
           if (($i) % $kolom == 1) {
             echo '<tr>';
           }
+          echo '<div>';
           echo '<td style="text-align: justify;" width="300px"><img src=' . $upload_dir . $data["fotoProduk"], ' class="responsive-img materialboxed", width="165px"/><b>' . $data['namaProduk'] .'</b></td>';
+          echo '</div>';
           if (($i) % $kolom == 0) {
             echo '</tr>';
           }
