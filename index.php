@@ -7,7 +7,9 @@
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../New_WGI/css/style.css">
+
+  <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,14 +24,14 @@
   <div class="navbar-fixed">
     <nav>
       <!-- <div class="container"> -->
-      <div class="nav-wrapper">
+      <div class="nav-wrapper navbar deep-purple">
         <a style="padding-left: 30px;" href="#home" class="brand-logo">PT. Globalindo Intimates</a>
         <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#product">Product</a></li>
-          <li><a href="#">Achievement</a></li>
+          <li><a href="achievement.php">Achievement</a></li>
           <li><a href="event.php">Event</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="visitor.php">Visitor</a></li>
@@ -43,14 +45,14 @@
 
   <!-- side-nav -->
   <ul class="sidenav" id="mobile">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Product</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#product">Product</a></li>
     <li><a href="#">Achievement</a></li>
-    <li><a href="#">Event</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Visitor</a></li>
-    <li><a href="#">Login</a></li>
+    <li><a href="event.php">Event</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="visitor.php">Visitor</a></li>
+    <li><a href="login.php">Login</a></li>
   </ul>
   <!-- akhir side-nav -->
 
@@ -58,10 +60,21 @@
   <div class="slider">
     <ul class="slides">
       <li>
-        <img src="img/home/Automated Strap making section.jpg" style="opacity: 0.5;">
+        <img src="img/home/Fabric Molding Section.jpg" style="opacity: 0.5;">
         <div class="caption center-align">
-          <h3>WELCOME TO PT. GLOBALINDO INTIMATES</h3>
-          <h5 class="light grey-text text-lighten-3">We serve the best quality product</h5>
+          <h1 style="font-weight: bold;">WELCOME TO PT. GLOBALINDO INTIMATES</h1>
+        </div>
+      </li>
+      <li>
+        <img src=" img/home/Fabric Storage.jpg" style="opacity: 0.5;">
+        <div class="caption right-align">
+          <h1 style="font-weight: bold;">We serve the best quality product</h1>
+        </div>
+      </li>
+      <li>
+        <img src="img/home/Lace cutter with Laser Technology.jpg" style="opacity: 0.5;">
+        <div class="caption left-align">
+          <h1 style="font-weight: bold;">We serve the best quality product</h1>
         </div>
       </li>
   </div>
@@ -70,7 +83,7 @@
   <?php
 
   include "connection.php";
-  
+
   ?>
 
 
@@ -86,26 +99,21 @@
     }
   }
   ?>
+
   <section class="about scrollspy" id="about">
     <div class="container" style="height: 600px;">
       <div class="row">
-        <h3 class="light grey-text text-darken-3 center">Our Visi & Misi</h3>
-        <hr class="center" style="width: 300px; margin-bottom: 50px; border-top: 5px solid black">
-        <div class="row">
-          <div class="col m8">
-            <p style="text-align: justify;"><?php echo $visiAbout ?></p>
-          </div>
-          <div class="col m4">
-            <img class="responsive-img" style="float: right;" src="img/visi&misi/vision1.jpeg">
-          </div>
+        <div class="col m12">
+          <h4 style="font-weight: bold;" class="center">Vision</h4>
+          <hr class="center" style="width: 150px; margin-bottom: 50px; border-top: 3px solid black">
+          <p style="text-align: justify; font-size:20px"><?php echo $visiAbout ?></p>
         </div>
-        <div class="row">
-          <div class="col m4">
-            <img class="responsive-img" src="img/visi&misi/mission.png">
-          </div>
-          <div class="col m8">
-            <p style="text-align: justify;"><?php echo $misiAbout ?></p>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col m12">
+          <h4 style="font-weight: bold;" class="center">Mission</h4>
+          <hr class="center" style="width: 150px; margin-bottom: 50px; border-top: 3px solid black">
+          <p style="text-align: justify; font-size:20px"><?php echo $misiAbout ?></p>
         </div>
       </div>
     </div>
@@ -114,10 +122,9 @@
 
   <!-- product -->
   <section class="product grey lighten-3 scrollspy" id="product">
-    <div class="container" style="height: 600px;">
-      <h3 class="light grey-text text-darken-3 center">Our Product</h3>
-      <hr class="center" style="width: 300px; margin-bottom: 50px; border-top: 5px solid black;">
-
+    <div class="container">
+      <h4 class="center" style="font-weight: bold;">Newest Product</h4>
+      <hr class="center" style="width: 300px; margin-bottom: 50px; border-top: 3px solid black;">
 
       <table>
         <?php
@@ -127,16 +134,11 @@
         $sqlProduk = "SELECT * FROM tabel_produk ORDER BY idProduk DESC LIMIT 8";
         $rslt = mysqli_query($kon, $sqlProduk);
         while ($data = mysqli_fetch_array($rslt)) {
-          // require_once ('resizeImage.php');
-          // $resize = new ResizeImage($upload_dir . $data["fotoProduk"]);
-          // $resize->resizeTo(100,100,'exact');
-          // $resize->saveImage($upload_dir . $data["fotoProduk"]);
-
 
           if (($i) % $kolom == 1) {
             echo '<tr>';
           }
-          echo '<td style="text-align: justify;" width="300px"><img src=' . $upload_dir . $data["fotoProduk"], ' class="responsive-img materialboxed", width="165px"/><b>' . $data['namaProduk'] .'</b></td>';
+          echo '<td><img src=' . $upload_dir . $data["fotoProduk"], ' class="responsive-img materialboxed", width="200px"/><p class="center" style="font-weight: bold">' . $data['namaProduk'] . '</p></td>';
           if (($i) % $kolom == 0) {
             echo '</tr>';
           }
@@ -144,6 +146,7 @@
         }
         ?>
       </table>
+
     </div>
   </section>
   <!-- end-product -->
@@ -201,16 +204,20 @@
   </div>
   <!-- end-achievement -->
 
-  
+
   <!-- contact -->
   <section class="contact scrollspy" id="contact">
     <div class="container" style="height: 600px;">
-      <h3 class="light grey-text text-darken-3 center">Contact Us</h3>
-      <hr class="center" style="width: 300px; margin-bottom: 50px; border-top: 5px solid black">
+      <h4 class="center" style="font-weight: bold;">Contact Us</h4>
+      <hr class="center" style="width: 300px; margin-bottom: 50px; border-top: 3px solid black">
       <div class="row">
         <div class="col m7 12">
           <form action="adapter_form_kontak.php" method="post">
             <div class="card-panel">
+              <div class="input-field">
+                <input type="email" name="nama" class="validate">
+                <label for="nama">Name</label>
+              </div>
               <div class="input-field">
                 <input type="email" name="emailKontak" class="validate">
                 <label for="email">Email</label>
@@ -223,7 +230,7 @@
                 <textarea type="text" name="messageKontak" class="materialize-textarea" style="height: 88px;"></textarea>
                 <label for="message">Message</label>
               </div>
-              <button type="submit" class="btn">Send</button>
+              <button type="submit" class="btn deep-purple">Send</button>
             </div>
           </form>
         </div>
@@ -251,7 +258,7 @@
   <!-- end-contact -->
 
   <!-- footer -->
-  <footer class="red darken-1 white-text center" style="padding: 10px 0;">
+  <footer class="red darken-1 white-text center deep-purple" style="padding: 10px 0;">
     <p>Copyright ©2021 All rights reserved | Made PT. Globalindo Intimates</p>
   </footer>
   <!-- end-footer -->

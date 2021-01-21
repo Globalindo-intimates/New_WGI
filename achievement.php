@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event</title>
+    <title>Achievement</title>
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -57,8 +57,8 @@
     <section class="event" id="event" style="margin: 20px;">
         <div class="container">
             <div>
-                <h4 class="center" style="font-weight: bold;">ALL EVENT</h4>
-                <hr class="center" style="width: 170px; margin-bottom: 50px; border-top: 3px solid black">
+                <h4 class="center" style="font-weight: bold;">ACHIEVEMENT</h4>
+                <hr class="center" style="width: 200px; margin-bottom: 50px; border-top: 3px solid black">
             </div>
         </div>
 
@@ -67,8 +67,8 @@
             include 'connection.php';
             $kolom = 5;
             $i = 1;
-            $upload_dir = 'img/even/';
-            $sqlEvent = "SELECT * FROM tabel_event ORDER BY idEvent";
+            $upload_dir = 'img/achievement/';
+            $sqlEvent = "SELECT * FROM tabel_achi ORDER BY idAchi";
             $rslt = mysqli_query($kon, $sqlEvent);
             while ($data = mysqli_fetch_array($rslt)) {
 
@@ -77,10 +77,8 @@
                 }
 
                 echo '<td>
-                <img src=' . $upload_dir . $data["fotoEvent"], ' class="responsive-img materialboxed", width="300px"/>
-                <p class="center" style="font-weight: bold">' . $data['namaEvent'] . '</p>
-                <p class="center" style="font-weight: bold">' . $data['tanggalEvent'] . '</p>
-                <p class="center" style="font-weight: bold">' . $data['deskripsiEvent'] . '</p>
+                <img src=' . $upload_dir . $data["fotoAchi"], ' class="responsive-img materialboxed", width="300px"/>
+                <p class="center" style="font-weight: bold">' . $data['namaAchi'] . '</p>
                 </td>';
 
                 if (($i) % $kolom == 0) {
