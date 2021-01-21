@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2021 at 05:30 AM
+-- Generation Time: Jan 21, 2021 at 10:36 AM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.13
+-- PHP Version: 7.4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,13 +58,7 @@ CREATE TABLE `tabel_achi` (
 --
 
 INSERT INTO `tabel_achi` (`idAchi`, `kategoriAchi`, `namaAchi`, `fotoAchi`) VALUES
-(0, '', 'API-certificate', 'API-certificate.jpg'),
-(0, '', 'bpjs', 'bpjs.jpg'),
-(0, '', 'Disabilitas-certificate', 'Disabilitas-certificate.jpg'),
-(0, '', 'KPPBC-certificate', 'KPPBC-certificate.jpg'),
-(0, '', 'Oekotex-certificate', 'Oekotex-certificate.jpg'),
-(0, '', 'Vokasi-certificate', 'Vokasi-certificate.jpg'),
-(0, '', 'WRAP-Certificate', 'WRAP-Certificate.jpg');
+(1, '', 'bpjs', 'bpjs.jpg');
 
 -- --------------------------------------------------------
 
@@ -88,6 +82,26 @@ INSERT INTO `tabel_admin` (`idAdmin`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tabel_archi`
+--
+
+CREATE TABLE `tabel_archi` (
+  `idAchi` int(100) NOT NULL,
+  `namaAchi` varchar(100) NOT NULL,
+  `fotoAchi` varchar(100) NOT NULL,
+  `KategoriAchi` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tabel_archi`
+--
+
+INSERT INTO `tabel_archi` (`idAchi`, `namaAchi`, `fotoAchi`, `KategoriAchi`) VALUES
+(1, 'bpjs', 'bpjs.jpg', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tabel_event`
 --
 
@@ -104,7 +118,11 @@ CREATE TABLE `tabel_event` (
 --
 
 INSERT INTO `tabel_event` (`idEvent`, `namaEvent`, `deskripsiEvent`, `tanggalEvent`, `fotoEvent`) VALUES
-(1, 'Assistance Vocational', 'assistancevocational', '2020-12-12', 'assistancevocational.png');
+(1, 'Assistance Vocational', 'assistancevocational', '2020-12-12', 'assistancevocational.png'),
+(2, 'FILA', 'FILA', '0000-00-00', 'FILA.jpg'),
+(3, 'nurse uniform', 'nurse uniform', '0000-00-00', 'nurseuniform.jpg'),
+(4, 'puma hitam', 'puma hitam', '0000-00-00', 'pumahitam.jpg'),
+(5, 'SBW Panty', 'SBW Panty', '0000-00-00', 'SBWPanty.jpg');
 
 -- --------------------------------------------------------
 
@@ -165,25 +183,25 @@ INSERT INTO `tabel_kontak` (`idKontak`, `emailKontak`, `telephoneKontak`, `messa
 --
 
 CREATE TABLE `tabel_produk` (
-  `idProduk` int(11) NOT NULL,
-  `namaProduk` varchar(25) NOT NULL,
-  `fotoProduk` varchar(255) NOT NULL
+  `id` int(11) NOT NULL,
+  `name` varchar(25) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tabel_produk`
 --
 
-INSERT INTO `tabel_produk` (`idProduk`, `namaProduk`, `fotoProduk`) VALUES
-(1, 'FILA', 'FILA.jpg'),
-(10, 'nurse uniform', 'nurseuniform.jpg'),
+INSERT INTO `tabel_produk` (`id`, `name`, `image`) VALUES
+(10, 'nurse unifor', 'nurseuniform.jpg'),
 (11, 'puma hitam', 'pumahitam.jpg'),
 (12, 'SBW Panty', 'SBWPanty.jpg'),
 (13, 'Spelding Cln', 'SpeldingCln.jpg'),
 (14, 'suster', 'suster.jpg'),
 (15, 't-shirt', 't-shirt.jpg'),
 (16, 'vf 2', 'vf2.jpg'),
-(17, 'bikini', 'bikini.jpg');
+(17, 'bikini', 'bikini.jpg'),
+(39, 'taplak', '1611221402_5340.jpg');
 
 -- --------------------------------------------------------
 
@@ -251,10 +269,22 @@ ALTER TABLE `tabel_about`
   ADD PRIMARY KEY (`idAbout`);
 
 --
+-- Indexes for table `tabel_achi`
+--
+ALTER TABLE `tabel_achi`
+  ADD PRIMARY KEY (`idAchi`);
+
+--
 -- Indexes for table `tabel_admin`
 --
 ALTER TABLE `tabel_admin`
   ADD PRIMARY KEY (`idAdmin`);
+
+--
+-- Indexes for table `tabel_archi`
+--
+ALTER TABLE `tabel_archi`
+  ADD PRIMARY KEY (`idAchi`);
 
 --
 -- Indexes for table `tabel_event`
@@ -272,7 +302,7 @@ ALTER TABLE `tabel_kontak`
 -- Indexes for table `tabel_produk`
 --
 ALTER TABLE `tabel_produk`
-  ADD PRIMARY KEY (`idProduk`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tabel_visit`
@@ -291,16 +321,28 @@ ALTER TABLE `tabel_about`
   MODIFY `idAbout` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tabel_achi`
+--
+ALTER TABLE `tabel_achi`
+  MODIFY `idAchi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tabel_admin`
 --
 ALTER TABLE `tabel_admin`
   MODIFY `idAdmin` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tabel_archi`
+--
+ALTER TABLE `tabel_archi`
+  MODIFY `idAchi` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tabel_event`
 --
 ALTER TABLE `tabel_event`
-  MODIFY `idEvent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idEvent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tabel_kontak`
@@ -312,7 +354,7 @@ ALTER TABLE `tabel_kontak`
 -- AUTO_INCREMENT for table `tabel_produk`
 --
 ALTER TABLE `tabel_produk`
-  MODIFY `idProduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `tabel_visit`

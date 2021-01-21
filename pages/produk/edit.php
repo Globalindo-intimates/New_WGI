@@ -4,7 +4,7 @@
 
   if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $sql = "select * from tabel_produk where id=".$id;
+    $sql = "select * from contacts where id=".$id;
     $result = mysqli_query($kon, $sql);
     if (mysqli_num_rows($result) > 0) {
       $row = mysqli_fetch_assoc($result);
@@ -24,7 +24,7 @@
 
 			$imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
 
-			$allowExt  = array('jpeg', 'jpg');
+			$allowExt  = array('jpeg', 'jpg', 'png', 'gif');
 
 			$userPic = time().'_'.rand(1000,9999).'.'.$imgExt;
 
@@ -45,7 +45,7 @@
 		}
 
 		if(!isset($errorMsg)){
-			$sql = "update tabel_produk
+			$sql = "update contacts
 									set name = '".$name."',
 										image = '".$userPic."'
 					where id=".$id;

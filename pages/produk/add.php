@@ -11,7 +11,7 @@
 
     if(empty($name)){
 			$errorMsg = 'Please input name';
-		}
+	
 		}else{
 
 			$imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
@@ -44,5 +44,5 @@
 				$errorMsg = 'Error '.mysqli_error($conn);
 			}
 		}
-  }
+	}
 ?>

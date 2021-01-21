@@ -147,7 +147,7 @@
                         </li>
 
                         <li>
-                            <a href="pages/produk.php"><i class="fa fa-shopping-cart fa-fw"></i> Product</a>
+                            <a href="produk/index.php"><i class="fa fa-shopping-cart fa-fw"></i> Product</a>
                         </li>
                         <li>
                             <a href="achievement.php"><i class="fa fa-trophy fa-fw"></i> Achievement</a>
