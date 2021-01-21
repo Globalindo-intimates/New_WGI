@@ -121,7 +121,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> SETTING</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="../index.php"><i class="fa fa-sign-out fa-fw"></i> LOGOUT</a>
+                        <li><a href="login.php"><i class="fa fa-sign-out fa-fw"></i> LOGOUT</a>
                         </li>
                     </ul>
                 </li>
@@ -147,7 +147,7 @@
                         </li>
 
                         <li>
-                            <a href="product.php"><i class="fa fa-shopping-cart fa-fw"></i> Product</a>
+                            <a href="pages/produk.php"><i class="fa fa-shopping-cart fa-fw"></i> Product</a>
                         </li>
                         <li>
                             <a href="achievement.php"><i class="fa fa-trophy fa-fw"></i> Achievement</a>
@@ -159,7 +159,7 @@
                             <a href="message.php"><i class="fa fa-envelope fa-fw"></i> Message</a>
                         </li>
                         <li>
-                            <a href="message.php"><i class="fa fa-commenting fa-fw"></i> About</a>
+                            <a href="about.php"><i class="fa fa-commenting fa-fw"></i> About</a>
                         </li>
 
                         <!-- <li>
