@@ -87,7 +87,7 @@
                             <td><?php echo $row['date'] ?></td>
                             <td><?php echo $row['decs'] ?></td>
                             <td class="text-center">
-                              <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-info"><i class="fa fa-user-edit"></i></a>
+                              <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-info"><i class="fa fa-edit"></i></a>
                               <a href="event.php?delete=<?php echo $row['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this record?')"><i class="fa fa-trash-alt"></i></a>
                             </td>
                           </tr>
