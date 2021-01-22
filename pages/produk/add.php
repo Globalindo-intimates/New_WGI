@@ -41,7 +41,7 @@
 				$successMsg = 'Produk sudah ditambahkani';
 				header('Location: produk.php');
 			}else{
-				$errorMsg = 'Error '.mysqli_error($conn);
+				$errorMsg = 'Error '.mysqli_error($kon);
 			}
 		}
 	}

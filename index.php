@@ -30,7 +30,7 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#product">Product</a></li>
+          <li><a href="home_product.php">Product</a></li>
           <li><a href="achievement.php">Achievement</a></li>
           <li><a href="event.php">Event</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -230,7 +230,7 @@
                 <textarea type="text" name="messageKontak" class="materialize-textarea" style="height: 88px;"></textarea>
                 <label for="message">Message</label>
               </div>
-              <button type="submit" class="btn deep-purple">Send</button>
+              <button type="submit" class="btn deep-purple waves-effect" style="width:25%;">Send</button>
             </div>
           </form>
         </div>

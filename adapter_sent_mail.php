@@ -46,7 +46,7 @@ if (mysqli_num_rows($query) > 0) {
         if ($jumlah < 5) {
             $risk = "Resiko Covid 19 : Rendah";
         } else {
-            $risk ="Resiko Covid 19 : Tinggi";
+            $risk = "Resiko Covid 19 : Tinggi";
         }
     }
 }
@@ -58,9 +58,9 @@ $pdf->Write(0, $tujuan, '', 0, 'C', true, 0, false, false, 0);
 
 $style = array(
 
-    'fgcolor' => array(0,0,0),
+    'fgcolor' => array(0, 0, 0),
     'bgcolor' => false, //array(255,255,255)
-    
+
 );
 
 $pdf->write2DBarcode($idTamu, 'QRCODE,Q', 68, 120, 75, 75, $style, 'C');
@@ -164,7 +164,7 @@ $mail->Subject = 'Tiket Berkunjung PT Globalindo Intimates';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //$mail->msgHTML(file_get_contents('tunjukan'));
-$mail->addStringAttachment($attch,"TIKET_BERTAMU.pdf");
+$mail->addStringAttachment($attch, "TIKET_BERTAMU.pdf");
 
 //Replace the plain text body with one created manually
 $mail->Body = 'Tunjukan ke security Tiket dibawah ini saat anda berkunjung ke PT Globalindo Intimates';
@@ -176,4 +176,3 @@ if (!$mail->send()) {
 } else {
     echo "Message sent!";
 }
-?>
