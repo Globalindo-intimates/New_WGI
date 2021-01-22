@@ -5,7 +5,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>PHP CRUD</title>
+    <title>Tambah Produk</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
@@ -13,16 +13,16 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #f7b277;"">
       <div class="container">
-        <a class="navbar-brand" href="index.php">PHP CRUD WITH IMAGE</a>
+        <a class="navbar-brand" href="produk.php">Produk List</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a class="btn btn-outline-danger" href="index.php"><i class="fa fa-sign-out-alt"></i></a></li>
+              <li class="nav-item"><a class="btn btn-outline-danger" href="produk.php"><i class="fa fa-sign-out-alt"></i></a></li>
             </ul>
         </div>
       </div>
@@ -32,7 +32,7 @@
         <div class="row justify-content-center">
           <div class="col-md-6">
             <div class="card">
-              <div class="card-header">Create</div>
+              <div class="card-header">Tanbah Produk</div>
               <div class="card-body">
                 <form class="" action="add.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">

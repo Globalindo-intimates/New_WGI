@@ -1,10 +1,10 @@
 <?php
   include('../../connection.php');
-  $upload_dir = '../../img/product/';
+	$upload_dir = '../../img/even/';
 
   if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $sql = "select * from tabel_produk where id=".$id;
+    $sql = "select * from tabel_event where id=".$id;
     $result = mysqli_query($kon, $sql);
     if (mysqli_num_rows($result) > 0) {
       $row = mysqli_fetch_assoc($result);
@@ -15,6 +15,8 @@
 
   if(isset($_POST['Submit'])){
 		$name = $_POST['name'];
+	$decs = $_POST['decs'];
+    $date = $_POST['date'];
 
 		$imgName = $_FILES['image']['name'];
 		$imgTmp = $_FILES['image']['tmp_name'];
@@ -45,16 +47,18 @@
 		}
 
 		if(!isset($errorMsg)){
-			$sql = "update tabel_produk
+			$sql = "update tabel_achi
 									set name = '".$name."',
-										image = '".$userPic."'
+										date = '".$date."',
+										decs = '".$decs."',
+                    image = '".$userPic."'
 					where id=".$id;
 			$result = mysqli_query($kon, $sql);
 			if($result){
-				$successMsg = 'Produk sudah diperbarui';
-				header('Location:produk.php');
+				$successMsg = 'Achievement berhasil diperbarui';
+				header('Location:archi.php');
 			}else{
-				$errorMsg = 'Error '.mysqli_error($kon);
+				$errorMsg = 'Error '.mysqli_error($conn);
 			}
 		}
 
@@ -66,7 +70,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Edit Produk</title>
+    <title>Edit Achievement</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
@@ -74,18 +78,18 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #f7b277;">
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #69fa69;">
       <div class="container">
-        <a class="navbar-brand" href="#">Produk List</a>
+        <a class="navbar-brand" href="#">Edit Achievement</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto"></ul>
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a class="btn btn-outline-danger" href="produk.php"><i class="fa fa-sign-out-alt"></i></a></li>
-            </ul>
-        </div>
+        <ul class="navbar-nav mr-auto"></ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="btn btn-outline-danger" href="../dashboard.php" style="margin-left: 8px;"><i class="fa fa-sign-out-alt"></i></a></li>
+        </ul>
+      </div>
       </div>
     </nav>
 
@@ -94,16 +98,21 @@
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
-                Edit Produk
+                Edit Profile
               </div>
               <div class="card-body">
                 <form class="" action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                      <label for="name">Nama Produk</label>
-                      <input type="text" class="form-control" name="name"  placeholder="Masukkan Nama Produk" value="<?php echo $row['name']; ?>">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" name="name"  placeholder="Masukkan nama achievement" value="<?php echo $row['name']; ?>">
                     </div>
                     <div class="form-group">
-                      <label for="image">Pilih Foto Produk</label>
+                      <label for="date">Tanggal Achievement Terbit</label>
+                      <input type="date" class="form-control" name="date" placeholder="" value="<?php echo $row['contact']; ?>">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="image">Choose Image</label>
                       <div class="col-md-4">
                         <img src="<?php echo $upload_dir.$row['image'] ?>" width="100">
                         <input type="file" class="form-control" name="image" value="">
