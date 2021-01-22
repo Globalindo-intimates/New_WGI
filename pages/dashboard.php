@@ -156,7 +156,7 @@
                             <a href="event/event.php"><i class="fa fa-calendar fa-fw"></i> Event</a>
                         </li>
                         <li>
-                            <a href="message.php"><i class="fa fa-envelope fa-fw"></i> Message</a>
+                            <a href="message/message.php"><i class="fa fa-envelope fa-fw"></i> Message</a>
                         </li>
                         <li>
                             <a href="about.php"><i class="fa fa-commenting fa-fw"></i> About</a>

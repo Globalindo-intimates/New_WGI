@@ -38,7 +38,7 @@
 					values('".$name."', '".$userPic."')";
 			$result = mysqli_query($kon, $sql);
 			if($result){
-				$successMsg = 'Produk sudah ditambahkani';
+				$successMsg = 'Produk sudah ditambahkan';
 				header('Location: produk.php');
 			}else{
 				$errorMsg = 'Error '.mysqli_error($kon);

@@ -78,7 +78,7 @@
 
     <nav class="navbar navbar-expand-md navbar-light" style="background-color: #69fa69;">
       <div class="container">
-        <a class="navbar-brand" href="#">Edit Achievement</a>
+        <a class="navbar-brand" href="archi.php">Archievement</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="form-group">
                       <label for="date">Tanggal Achievement Terbit</label>
-                      <input type="date" class="form-control" name="date" placeholder="" value="<?php echo $row['contact']; ?>">
+                      <input type="date" class="form-control" name="date" placeholder="" value="<?php echo $row['date']; ?>">
                     </div>
                     
                     <div class="form-group">

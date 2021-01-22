@@ -76,7 +76,7 @@
 
     <nav class="navbar navbar-expand-md navbar-light" style="background-color: #f7b277;">
       <div class="container">
-        <a class="navbar-brand" href="#">Produk List</a>
+        <a class="navbar-brand" href="produk.php">Produk</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
           <span class="navbar-toggler-icon"></span>
         </button>
