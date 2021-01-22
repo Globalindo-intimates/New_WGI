@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2021 at 10:36 AM
+-- Generation Time: Jan 22, 2021 at 05:50 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -47,18 +47,19 @@ INSERT INTO `tabel_about` (`idAbout`, `visiAbout`, `misiAbout`) VALUES
 --
 
 CREATE TABLE `tabel_achi` (
-  `idAchi` int(50) NOT NULL,
-  `kategoriAchi` varchar(100) NOT NULL,
-  `namaAchi` varchar(100) NOT NULL,
-  `fotoAchi` varchar(255) NOT NULL
+  `id` int(50) NOT NULL,
+  `date` date NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tabel_achi`
 --
 
-INSERT INTO `tabel_achi` (`idAchi`, `kategoriAchi`, `namaAchi`, `fotoAchi`) VALUES
-(1, '', 'bpjs', 'bpjs.jpg');
+INSERT INTO `tabel_achi` (`id`, `date`, `name`, `image`) VALUES
+(1, '0000-00-00', 'bpjs', 'bpjs.jpg'),
+(3, '0000-00-00', 'fdm', '1611244927_2615.jpg');
 
 -- --------------------------------------------------------
 
@@ -82,22 +83,59 @@ INSERT INTO `tabel_admin` (`idAdmin`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel_archi`
+-- Table structure for table `tabel_chat`
 --
 
-CREATE TABLE `tabel_archi` (
-  `idAchi` int(100) NOT NULL,
-  `namaAchi` varchar(100) NOT NULL,
-  `fotoAchi` varchar(100) NOT NULL,
-  `KategoriAchi` varchar(100) NOT NULL
+CREATE TABLE `tabel_chat` (
+  `id` int(50) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `contact` varchar(20) NOT NULL,
+  `chat` text NOT NULL,
+  `reply` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tabel_archi`
+-- Dumping data for table `tabel_chat`
 --
 
-INSERT INTO `tabel_archi` (`idAchi`, `namaAchi`, `fotoAchi`, `KategoriAchi`) VALUES
-(1, 'bpjs', 'bpjs.jpg', '');
+INSERT INTO `tabel_chat` (`id`, `name`, `email`, `contact`, `chat`, `reply`) VALUES
+(1, '', 'efaef@fadf.co', '55655', 'saff', 'adsadasd'),
+(2, '', 'adf2GFW@FGD', '4646', '', ''),
+(3, '', 'adf2GFW@FGD', '4646', 'kyhf', ''),
+(4, '', 'adf2GFW@FGD', '4646', 'kyhf', ''),
+(5, '', 'af@d', '4646', 'asf', ''),
+(6, '', 'af@d', '4646', 'asf', ''),
+(7, '', 'af@d', '4646', 'asf', ''),
+(8, '', 'af@d', '4646', 'asf', ''),
+(9, '', 'af@d', '4646', 'asf', ''),
+(10, '', 'af@d', '4646', 'asf', ''),
+(11, '', 'af@d', '4646', 'asf', ''),
+(12, '', 'af@d', '4646', 'asf', ''),
+(13, '', 'af@d', '4646', 'asf', ''),
+(14, '', 'af@d', '4646', 'asf', ''),
+(15, '', 'af@d', '4646', 'asf', ''),
+(16, '', 'af@d', '4646', 'asf', ''),
+(17, '', 'af@d', '4646', 'asf', ''),
+(18, '', 'af@d', '4646', 'asf', ''),
+(19, '', 'af@d', '4646', 'asf', ''),
+(20, '', 'af@d', '4646', 'asf', ''),
+(21, '', 'af@d', '4646', 'asf', ''),
+(22, '', 'af@d', '4646', 'asf', ''),
+(23, '', 'adf2GFW@FGD', '4646', 'j57', ''),
+(24, '', 'adf2GFW@FGD', '4646', 'j57', ''),
+(25, '', 'adf2GFW@FGD', '4646', 'j57', ''),
+(26, '', 'af@d', '4646', 'asc', ''),
+(27, '', 'adf2GFW@FGD', '4646', 'as', ''),
+(28, '', 'adf2GFW@FGD', '4646', 'as', ''),
+(29, '', 'adf2GFW@FGD', '4646', 'as', ''),
+(30, '', 'adf2GFW@FGD', '4646', 'as', ''),
+(31, '', 'adf2GFW@FGD', '4646', 'as', ''),
+(32, '', 'adf2GFW@FGD', '4646', 'as', ''),
+(33, '', 'adf2GFW@FGD', 'a', '', ''),
+(34, 'reja', 'rezha@globalindointimates.com', '0855656262', 'jjjsadfs', 'jhb'),
+(35, 'reja', 'rezha@globalindointimates.com', '0855656262', 'aer', 'asdasd'),
+(36, 'reja', 'rezha@globalindointimates.com', '0855656262', 'aer', 'uwoowoow');
 
 -- --------------------------------------------------------
 
@@ -106,75 +144,24 @@ INSERT INTO `tabel_archi` (`idAchi`, `namaAchi`, `fotoAchi`, `KategoriAchi`) VAL
 --
 
 CREATE TABLE `tabel_event` (
-  `idEvent` int(11) NOT NULL,
-  `namaEvent` varchar(100) NOT NULL,
-  `deskripsiEvent` text NOT NULL,
-  `tanggalEvent` date NOT NULL,
-  `fotoEvent` varchar(255) NOT NULL
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `decs` text NOT NULL,
+  `date` date NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tabel_event`
 --
 
-INSERT INTO `tabel_event` (`idEvent`, `namaEvent`, `deskripsiEvent`, `tanggalEvent`, `fotoEvent`) VALUES
+INSERT INTO `tabel_event` (`id`, `name`, `decs`, `date`, `image`) VALUES
 (1, 'Assistance Vocational', 'assistancevocational', '2020-12-12', 'assistancevocational.png'),
 (2, 'FILA', 'FILA', '0000-00-00', 'FILA.jpg'),
 (3, 'nurse uniform', 'nurse uniform', '0000-00-00', 'nurseuniform.jpg'),
 (4, 'puma hitam', 'puma hitam', '0000-00-00', 'pumahitam.jpg'),
-(5, 'SBW Panty', 'SBW Panty', '0000-00-00', 'SBWPanty.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tabel_kontak`
---
-
-CREATE TABLE `tabel_kontak` (
-  `idKontak` int(50) NOT NULL,
-  `emailKontak` varchar(50) NOT NULL,
-  `telephoneKontak` varchar(20) NOT NULL,
-  `messageKontak` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tabel_kontak`
---
-
-INSERT INTO `tabel_kontak` (`idKontak`, `emailKontak`, `telephoneKontak`, `messageKontak`) VALUES
-(1, 'efaef@fadf.co', '55655', 'saff'),
-(2, 'adf2GFW@FGD', '4646', ''),
-(3, 'adf2GFW@FGD', '4646', 'kyhf'),
-(4, 'adf2GFW@FGD', '4646', 'kyhf'),
-(5, 'af@d', '4646', 'asf'),
-(6, 'af@d', '4646', 'asf'),
-(7, 'af@d', '4646', 'asf'),
-(8, 'af@d', '4646', 'asf'),
-(9, 'af@d', '4646', 'asf'),
-(10, 'af@d', '4646', 'asf'),
-(11, 'af@d', '4646', 'asf'),
-(12, 'af@d', '4646', 'asf'),
-(13, 'af@d', '4646', 'asf'),
-(14, 'af@d', '4646', 'asf'),
-(15, 'af@d', '4646', 'asf'),
-(16, 'af@d', '4646', 'asf'),
-(17, 'af@d', '4646', 'asf'),
-(18, 'af@d', '4646', 'asf'),
-(19, 'af@d', '4646', 'asf'),
-(20, 'af@d', '4646', 'asf'),
-(21, 'af@d', '4646', 'asf'),
-(22, 'af@d', '4646', 'asf'),
-(23, 'adf2GFW@FGD', '4646', 'j57'),
-(24, 'adf2GFW@FGD', '4646', 'j57'),
-(25, 'adf2GFW@FGD', '4646', 'j57'),
-(26, 'af@d', '4646', 'asc'),
-(27, 'adf2GFW@FGD', '4646', 'as'),
-(28, 'adf2GFW@FGD', '4646', 'as'),
-(29, 'adf2GFW@FGD', '4646', 'as'),
-(30, 'adf2GFW@FGD', '4646', 'as'),
-(31, 'adf2GFW@FGD', '4646', 'as'),
-(32, 'adf2GFW@FGD', '4646', 'as'),
-(33, 'adf2GFW@FGD', 'a', '');
+(5, 'SBW Panty', 'SBW Panty', '0000-00-00', 'SBWPanty.jpg'),
+(6, 'fdm', 'sc', '2021-01-04', '1611268376_6254.jpg');
 
 -- --------------------------------------------------------
 
@@ -193,7 +180,7 @@ CREATE TABLE `tabel_produk` (
 --
 
 INSERT INTO `tabel_produk` (`id`, `name`, `image`) VALUES
-(10, 'nurse unifor', 'nurseuniform.jpg'),
+(10, 'nurse uniform', 'nurseuniform.jpg'),
 (11, 'puma hitam', 'pumahitam.jpg'),
 (12, 'SBW Panty', 'SBWPanty.jpg'),
 (13, 'Spelding Cln', 'SpeldingCln.jpg'),
@@ -272,7 +259,7 @@ ALTER TABLE `tabel_about`
 -- Indexes for table `tabel_achi`
 --
 ALTER TABLE `tabel_achi`
-  ADD PRIMARY KEY (`idAchi`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tabel_admin`
@@ -281,22 +268,16 @@ ALTER TABLE `tabel_admin`
   ADD PRIMARY KEY (`idAdmin`);
 
 --
--- Indexes for table `tabel_archi`
+-- Indexes for table `tabel_chat`
 --
-ALTER TABLE `tabel_archi`
-  ADD PRIMARY KEY (`idAchi`);
+ALTER TABLE `tabel_chat`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tabel_event`
 --
 ALTER TABLE `tabel_event`
-  ADD PRIMARY KEY (`idEvent`);
-
---
--- Indexes for table `tabel_kontak`
---
-ALTER TABLE `tabel_kontak`
-  ADD PRIMARY KEY (`idKontak`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tabel_produk`
@@ -324,7 +305,7 @@ ALTER TABLE `tabel_about`
 -- AUTO_INCREMENT for table `tabel_achi`
 --
 ALTER TABLE `tabel_achi`
-  MODIFY `idAchi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tabel_admin`
@@ -333,22 +314,16 @@ ALTER TABLE `tabel_admin`
   MODIFY `idAdmin` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tabel_archi`
+-- AUTO_INCREMENT for table `tabel_chat`
 --
-ALTER TABLE `tabel_archi`
-  MODIFY `idAchi` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `tabel_chat`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `tabel_event`
 --
 ALTER TABLE `tabel_event`
-  MODIFY `idEvent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `tabel_kontak`
---
-ALTER TABLE `tabel_kontak`
-  MODIFY `idKontak` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tabel_produk`
