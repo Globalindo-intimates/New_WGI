@@ -68,7 +68,7 @@
             $kolom = 5;
             $i = 1;
             $upload_dir = 'img/even/';
-            $sqlEvent = "SELECT * FROM tabel_event ORDER BY idEvent";
+            $sqlEvent = "SELECT * FROM tabel_event ORDER BY id";
             $rslt = mysqli_query($kon, $sqlEvent);
             while ($data = mysqli_fetch_array($rslt)) {
 
@@ -77,10 +77,10 @@
                 }
 
                 echo '<td>
-                <img src=' . $upload_dir . $data["fotoEvent"], ' class="responsive-img materialboxed", width="300px"/>
-                <p class="center" style="font-weight: bold">' . $data['namaEvent'] . '</p>
-                <p class="center" style="font-weight: bold">' . $data['tanggalEvent'] . '</p>
-                <p class="center" style="font-weight: bold">' . $data['deskripsiEvent'] . '</p>
+                <img src=' . $upload_dir . $data["image"], ' class="responsive-img materialboxed", width="300px"/>
+                <p class="center" style="font-weight: bold">' . $data['name'] . '</p>
+                <p class="center" style="font-weight: bold">' . $data['date'] . '</p>
+                <p class="center" style="font-weight: bold">' . $data['decs'] . '</p>
                 </td>';
 
                 if (($i) % $kolom == 0) {

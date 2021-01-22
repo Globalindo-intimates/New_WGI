@@ -68,7 +68,7 @@
             $kolom = 5;
             $i = 1;
             $upload_dir = 'img/achievement/';
-            $sqlEvent = "SELECT * FROM tabel_achi ORDER BY idAchi";
+            $sqlEvent = "SELECT * FROM tabel_achi ORDER BY id";
             $rslt = mysqli_query($kon, $sqlEvent);
             while ($data = mysqli_fetch_array($rslt)) {
 
@@ -77,8 +77,8 @@
                 }
 
                 echo '<td>
-                <img src=' . $upload_dir . $data["fotoAchi"], ' class="responsive-img materialboxed", width="300px"/>
-                <p class="center" style="font-weight: bold">' . $data['namaAchi'] . '</p>
+                <img src=' . $upload_dir . $data["image"], ' class="responsive-img materialboxed", width="300px"/>
+                <p class="center" style="font-weight: bold">' . $data['name'] . '</p>
                 </td>';
 
                 if (($i) % $kolom == 0) {
