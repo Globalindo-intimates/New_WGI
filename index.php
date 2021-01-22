@@ -188,16 +188,16 @@
 
       <?php
       $upload_dir = 'img/achievement/';
-      $sqlAchi = "SELECT * FROM tabel_achi ORDER BY idAchi DESC LIMIT 4";
+      $sqlAchi = "SELECT * FROM tabel_achi ORDER BY id DESC LIMIT 4";
       $rsltAchi = mysqli_query($kon, $sqlAchi);
       while ($dataAchi = mysqli_fetch_array($rsltAchi)) {
 
 
         echo '<li>';
-        echo '<img src=' . $upload_dir . $dataAchi["fotoAchi"], ' style="opacity: 0.5;">';
+        echo '<img src=' . $upload_dir . $dataAchi["image"], ' style="opacity: 0.5;">';
         echo '<div class="caption center-align">';
         echo '<h3>Our Achievement</h3>';
-        echo '<h5 class="light grey-text text-lighten-3">' . $dataAchi['namaAchi'] . '</h5>';
+        echo '<h5 class="light grey-text text-lighten-3">' . $dataAchi['name'] . '</h5>';
         echo '</div>';
         echo '</li>';
       } ?>
@@ -249,19 +249,19 @@
           <form action="adapter_form_kontak.php" method="post">
             <div class="card-panel">
               <div class="input-field">
-                <input type="email" name="nama" class="validate">
-                <label for="nama">Name</label>
+                <input type="text" name="name" class="validate">
+                <label for="nama">Nama</label>
               </div>
               <div class="input-field">
-                <input type="email" name="emailKontak" class="validate">
+                <input type="email" name="email" class="validate">
                 <label for="email">Email</label>
               </div>
               <div class="input-field">
-                <input type="text" name="telephoneKontak" require>
+                <input type="text" name="contact" require>
                 <label for="telephone">Telephone Number</label>
               </div>
               <div class="input-field">
-                <textarea type="text" name="messageKontak" class="materialize-textarea" style="height: 88px;"></textarea>
+                <textarea type="text" name="chat" class="materialize-textarea" style="height: 88px;"></textarea>
                 <label for="message">Message</label>
               </div>
               <button type="submit" class="btn deep-purple waves-effect" style="width:25%;">Send</button>

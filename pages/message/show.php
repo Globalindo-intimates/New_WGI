@@ -61,7 +61,7 @@
                       <span><?php echo $row['reply'] ?></span>
                     </i></h5>
 
-                      <a class="btn btn-outline-danger" href="index.php"><i class="fa fa-sign-out-alt"></i><span>Back</span></a>
+                      <a class="btn btn-outline-danger" href="message.php"><i class="fa fa-sign-out-alt"></i><span>Back</span></a>
 
                 </div>
               </div>

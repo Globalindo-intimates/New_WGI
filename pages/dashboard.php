@@ -159,7 +159,7 @@
                             <a href="message/message.php"><i class="fa fa-envelope fa-fw"></i> Message</a>
                         </li>
                         <li>
-                            <a href="about.php"><i class="fa fa-commenting fa-fw"></i> About</a>
+                            <a href="about/about.php"><i class="fa fa-commenting fa-fw"></i> About</a>
                         </li>
 
                         <!-- <li>

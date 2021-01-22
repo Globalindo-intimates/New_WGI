@@ -32,7 +32,7 @@
   </head>
   <body>
 
-      <nav class="navbar navbar-expand-md navbar navbar-light" style="background-color: #f7b277;">
+      <!-- <nav class="navbar navbar-expand-md navbar navbar-light" style="background-color: #f7b277;">
         <div class="container">
           <a class="navbar-brand" href="produk.php">Produk</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -46,9 +46,9 @@
               </ul>
           </div>
         </div>
-      </nav>
-
-      <div class="container">
+      </nav> -->
+      <div id="page-wrapper">
+      <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
@@ -84,7 +84,7 @@
                             <td><img src="<?php echo $upload_dir.$row['image'] ?>" height="40"></td>
                             <td><?php echo $row['name'] ?></td>
                             <td class="text-center">
-                              <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-info"><i class="fa fa-user-edit"></i></a>
+                              <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-info"><i class="fa fa-edit"></i></a>
                               <a href="produk.php?delete=<?php echo $row['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this record?')"><i class="fa fa-trash-alt"></i></a>
                             </td>
                           </tr>
@@ -100,7 +100,7 @@
                 </div>
             </div>
         </div>
-      </div>
+      </div></div>
 
     <script src="js/bootstrap.min.js" charset="utf-8"></script>
     
