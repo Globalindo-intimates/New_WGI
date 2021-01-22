@@ -29,10 +29,12 @@
                                 <div class="input-field">
                                     <input type="text" name="username" class="validate" style="height: 50px;" require>
                                     <label for="username">Username</label>
+                                    <span class="helper-text" data-error="wrong" data-success="right"></span>
                                 </div>
                                 <div class="input-field">
                                     <input type="password" name="password" style="height: 50px;" require>
                                     <label for="password">Password</label>
+                                    <span class="helper-text" data-error="wrong" data-success="right"></span>
                                 </div>
                                 <label>
                                     <input type="checkbox"/>
