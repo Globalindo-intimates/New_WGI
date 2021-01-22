@@ -70,7 +70,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Edit Achievement</title>
+    <title>Edit Event</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
@@ -78,9 +78,9 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #69fa69;">
+    <nav class="navbar navbar-expand-md navbar navbar-light"  style="background-color: #bec922">
       <div class="container">
-        <a class="navbar-brand" href="#">Edit Achievement</a>
+        <a class="navbar-brand" href="event.php">Event</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -98,17 +98,20 @@
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
-                Edit Profile
+                Edit Event
               </div>
               <div class="card-body">
                 <form class="" action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" name="name"  placeholder="Masukkan nama achievement" value="<?php echo $row['name']; ?>">
+                      <label for="name">Nama Event</label>
+                      <input type="text" class="form-control" name="name"  placeholder="Masukkan nama event" value="<?php echo $row['name']; ?>">
                     </div>
                     <div class="form-group">
                       <label for="date">Tanggal Achievement Terbit</label>
-                      <input type="date" class="form-control" name="date" placeholder="" value="<?php echo $row['contact']; ?>">
+                      <input type="date" class="form-control" name="date" placeholder="" value="<?php echo $row['date']; ?>">
+                    </div><div class="form-group">
+                      <label for="decs">Deskripsi event</label>
+                      <input type="text" class="form-control" name="decs"  placeholder="Masukkan deskripsi event" value="<?php echo $row['decs']; ?>">
                     </div>
                     
                     <div class="form-group">
