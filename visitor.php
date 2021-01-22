@@ -53,36 +53,15 @@
     </ul>
     <!-- akhir side-nav -->
 
-    <!-- 
-    <section class="ketentuan scrollspy" id="ketentuan">
-          <div class="container">
-            <div class="row">
-              <h3 class="light grey-text text-darken-3 center">Ketentuan</h3>
-              <hr class="center" style="width: 300px; margin-bottom: 30px; border-top: 5px solid black">
-              <div class="row">
-                <div class="col m12 12">
-                  <p style="text-align: justify;">Selamat datang di PT Globalindo Intimates Klaten, silahkan mengisi formulir ini sebelum memasuki area perusahaan. Mohon menggunakan HURUF KAPITAL/BESAR. Setelah submit formulir ini, calon kandidat masing-masing akan mendapatkan QR CODE gambar yang diemail sesuai email yang diisi. silahkan cek email H-1 sebelum kedatangan di PT Globalindo Intimates (cek email di kotak masuk atau kotak spam pesan). QR CODE tersebut wajib ditunjukkan saat datang ke PT Globalindo Intimates di Gerbang Security Utama (menggunakan HP tidak perlu di cetak).</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col m12 12">
-                <p style="text-align: justify;">Sesuai Keputusan Menteri Kesehatan Nomor HK.01.07/MENKES/328/2020 tentang pengendalian COVID-19 di tempat kerja. Serta demi kesehatan dan keselamatan bersama di area PT Globalindo Intimates, kejujuran anda kami harapkan dalam menjawab pertanyaan dibawah ini, isi dengan pilihan yang sesuai pada kolom jawaban bila sesuai dengan pernyataan yang ada.									</p>
-                </div>
-              </div>  
-            </div>
-          </div>
-        </section>
-     -->
-
     <!-- form-formulir -->
-    <section class="form_formulir" id="form_formulir">
+    <section class="form_formulir" id="form_formulir" style="margin-top: 20px;">
         <div class="container">
             <div class="row">
                 <div class="col m12 12">
                     <form action="adapter_form_visitor.php" method="post">
                         <div class="card-panel">
                             <h5 class="center" style="margin-bottom: 50px; font-weight: bold;">FORMULIR TAMU & PELAMAR</h5>
-                            <p style="text-align: justify;">Selamat datang di PT Globalindo Intimates Klaten, silahkan mengisi formulir ini sebelum memasuki area perusahaan. Mohon menggunakan HURUF KAPITAL/BESAR. Setelah submit formulir ini, calon kandidat masing-masing akan mendapatkan QR CODE gambar yang diemail sesuai email yang diisi. silahkan cek email H-1 sebelum kedatangan di PT Globalindo Intimates (cek email di kotak masuk atau kotak spam pesan). QR CODE tersebut wajib ditunjukkan saat datang ke PT Globalindo Intimates di Gerbang Security Utama (menggunakan HP tidak perlu di cetak). Terima kasih.</p>
+                            <p style="text-align: justify; margin-bottom: 20px;">Selamat datang di PT Globalindo Intimates Klaten, silahkan mengisi formulir ini sebelum memasuki area perusahaan. Mohon menggunakan HURUF KAPITAL/BESAR. Setelah submit formulir ini, calon kandidat masing-masing akan mendapatkan QR CODE gambar yang diemail sesuai email yang diisi. silahkan cek email H-1 sebelum kedatangan di PT Globalindo Intimates (cek email di kotak masuk atau kotak spam pesan). QR CODE tersebut wajib ditunjukkan saat datang ke PT Globalindo Intimates di Gerbang Security Utama (menggunakan HP tidak perlu di cetak). Terima kasih.</p>
                             <div class="input-field">
                                 <input style="height: 60px;" type="text" name="idCard" require>
                                 <label for="idCard">No. KTP/KITAS/PASSPORT</label>
@@ -211,7 +190,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn deep-purple" name="submit">Kirim</button>
+                        <button type="submit" class="btn-large waves-effect deep-purple" style="width: 20%;"  name="submit">Kirim</button>
                     </form>
                 </div>
             </div>
@@ -224,9 +203,6 @@
         <p>Copyright ©2021 All rights reserved | Made PT. Globalindo Intimates</p>
     </footer>
     <!-- end-footer -->
-
-
-
 
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>

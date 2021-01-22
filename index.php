@@ -6,10 +6,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-
-  <link rel="stylesheet" href="../New_WGI/css/style.css">
-
   <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="../css/style.css" rel="stylesheet">
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +16,6 @@
 <title>PT. Globalindo Intimates</title>
 
 <body id="home" class="scrollspy">
-
 
   <!-- navbar -->
   <div class="navbar-fixed">
@@ -30,7 +27,7 @@
         <ul class="right hide-on-med-and-down">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#product">Product</a></li>
+          <li><a href="home_product.php">Product</a></li>
           <li><a href="achievement.php">Achievement</a></li>
           <li><a href="event.php">Event</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -62,7 +59,7 @@
       <li>
         <img src="img/home/Fabric Molding Section.jpg" style="opacity: 0.5;">
         <div class="caption center-align">
-          <h1 style="font-weight: bold;">WELCOME TO PT. GLOBALINDO INTIMATES</h1>
+          <h1 style="font-weight: bold;">WELCOME TO <br> PT. GLOBALINDO INTIMATES</h1>
         </div>
       </li>
       <li>
@@ -81,11 +78,8 @@
   <!-- akhir slider -->
 
   <?php
-
   include "connection.php";
-
   ?>
-
 
   <!-- about -->
   <?php
@@ -116,19 +110,25 @@
           <p style="text-align: justify; font-size:20px"><?php echo $misiAbout ?></p>
         </div>
       </div>
+      <div style="float: right;">
+        <a class="hoverable" href="company_background.php">Read More</a>
+      </div>
     </div>
   </section>
   <!-- end-about -->
 
   <!-- product -->
-  <section class="product grey lighten-3 scrollspy" id="product">
+  <div class="parallax-container" style="height: 300px;">
+    <div class="parallax"><img src="img/home/Fabric Storage.jpg"></div>
+  </div>
+  <section class="scrollspy" id="product">
     <div class="container">
-      <h4 class="center" style="font-weight: bold;">Newest Product</h4>
+      <h2 class="center">Newest Product</h2>
       <hr class="center" style="width: 300px; margin-bottom: 50px; border-top: 3px solid black;">
 
       <table>
         <?php
-        $kolom = 4;
+        $kolom = 5;
         $i = 1;
         $upload_dir = 'img/product/';
         $sqlProduk = "SELECT * FROM tabel_produk ORDER BY id DESC LIMIT 8";
@@ -137,8 +137,22 @@
 
           if (($i) % $kolom == 1) {
             echo '<tr>';
-          }
-          echo '<td><img src=' . $upload_dir . $data["image"], ' class="responsive-img materialboxed", width="200px"/><p class="center" style="font-weight: bold">' . $data['name'] . '</p></td>';
+          } ?>
+          <td>
+            <div class="card small">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src=<?php echo $upload_dir . $data["image"] ?>>
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4 center" style="font-weight: bold;"><?php echo $data['name'] ?></span>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><?php echo $data['name'] ?><i class="material-icons right">close</i></span>
+              </div>
+            </div>
+          </td>
+
+        <?php
           if (($i) % $kolom == 0) {
             echo '</tr>';
           }
@@ -150,6 +164,23 @@
     </div>
   </section>
   <!-- end-product -->
+
+  <!-- clients -->
+  <div class="section" id="clients">
+    <div class="parallax-container" style="height: 100px;">
+      <div class="parallax"><img src="img/home/Automated Strap making section.jpg"></div>
+    </div>
+    <div class="section white">
+      <div class="row container">
+        <h2 class="header">Clients</h2>
+        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+      </div>
+    </div>
+    <div class="parallax-container" style="height: 100px;">
+      <div class="parallax"><img src="img/home/Automated Strap making section.jpg"></div>
+    </div>
+  </div>
+  <!-- end clients -->
 
   <!-- achievement -->
   <div class="slider">
@@ -171,44 +202,47 @@
         echo '</li>';
       } ?>
 
-
-
-      <!-- <li>
-        <img src="img/achievement/IMG_1048.jpg" style="opacity: 0.5;">
-        <div class="caption center-align">
-          <h3>Our Achievement</h3>
-          <h5 class="light grey-text text-lighten-3">Penghargaan Ketenagakerjaan RI</h5>
-        </div>
-      </li>
-      <li>
-        <img src="img/achievement/API-certificate.jpg" style="opacity: 0.5;">
-        <div class="caption left-align">
-          <h3>Our Achievement</h3>
-          <h5 class="light grey-text text-lighten-3">Certificate Textile Association</h5>
-        </div>
-      </li>
-      <li>
-        <img src="img/achievement/Disabilitas-certificate.jpg" style="opacity: 0.5;">
-        <div class="caption right-align">
-          <h3>Our Achievement</h3>
-          <h5 class="light grey-text text-lighten-3">Disabilitas Certificate</h5>
-        </div>
-      </li>
-      <li>
-        <img src="img/achievement/Vokasi-certificate.jpg" style="opacity: 0.5;">
-        <div class="caption center-align">
-          <h3>Our Achievement</h3>
-          <h5 class="light grey-text text-lighten-3">Vokasi Certificate</h5>
-        </div>
-      </li> -->
   </div>
-  <!-- end-achievement -->
+  <section class="scrollspy" id="product">
+    <div class="container">
+      <h2 class="center">Achievement</h2>
+      <hr class="center" style="width: 300px; margin-bottom: 50px; border-top: 3px solid black;">
 
+      <table>
+        <?php
+        include 'connection.php';
+        $kolom = 5;
+        $i = 1;
+        $upload_dir = 'img/achievement/';
+        $sqlEvent = "SELECT * FROM tabel_achi ORDER BY idAchi DESC LIMIT 4";
+        $rslt = mysqli_query($kon, $sqlEvent);
+        while ($data = mysqli_fetch_array($rslt)) {
+
+          if (($i) % $kolom == 1) {
+            echo '<tr>';
+          }
+
+          echo '<td>
+                <img src=' . $upload_dir . $data["fotoAchi"], ' class="responsive-img materialboxed", width="200px"/>
+                <p class="center" style="font-weight: bold">' . $data['namaAchi'] . '</p>
+                </td>';
+
+          if (($i) % $kolom == 0) {
+            echo '</tr>';
+          }
+          $i++;
+        }
+        ?>
+      </table>
+
+    </div>
+  </section>
+  <!-- end-achievement -->
 
   <!-- contact -->
   <section class="contact scrollspy" id="contact">
     <div class="container" style="height: 600px;">
-      <h4 class="center" style="font-weight: bold;">Contact Us</h4>
+      <h2 class="center">Contact Us</h2>
       <hr class="center" style="width: 300px; margin-bottom: 50px; border-top: 3px solid black">
       <div class="row">
         <div class="col m7 12">
@@ -230,13 +264,10 @@
                 <textarea type="text" name="chat" class="materialize-textarea" style="height: 88px;"></textarea>
                 <label for="message">Message</label>
               </div>
-              <button type="submit" class="btn deep-purple">Send</button>
+              <button type="submit" class="btn deep-purple waves-effect" style="width:25%;">Send</button>
             </div>
           </form>
         </div>
-
-
-        </script>
 
         <div class="col m5 12">
           <div class="card-panel">
@@ -252,8 +283,6 @@
         </div>
       </div>
     </div>
-
-
   </section>
   <!-- end-contact -->
 
@@ -298,6 +327,15 @@
     });
   </script>
   <!-- end-scrollspy -->
+
+  <!-- paralax -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    });
+  </script>
+  <!-- end paralax -->
 
 </body>
 
