@@ -104,7 +104,7 @@ if (isset($_GET['delete'])) {
                 <ul class="navbar-nav mr-auto"></ul>
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item"><a class="btn btn-primary" href="create.php"><i class="fa fa-plus"></i></a></li>
-                 </ul>
+                  </ul>
               </div>
             </div>
           </nav>

@@ -83,13 +83,13 @@
 
   <!-- about -->
   <?php
-  $queryAbout = mysqli_query($kon, "SELECT * FROM tabel_about ORDER BY idAbout DESC LIMIT 1");
+  $queryAbout = mysqli_query($kon, "SELECT * FROM tabel_about ORDER BY id DESC LIMIT 1");
   if (mysqli_num_rows($queryAbout) > 0) {
 
     while ($dataAbout = mysqli_fetch_array($queryAbout)) {
 
-      $visiAbout = $dataAbout["visiAbout"];
-      $misiAbout = $dataAbout["misiAbout"];
+      $visiAbout = $dataAbout["visi"];
+      $misiAbout = $dataAbout["misi"];
     }
   }
   ?>
@@ -172,9 +172,9 @@
     </div>
     <div class="section white">
       <div class="row container">
-        <h2 class="header">Clients</h2>
+        <!-- <h2 class="header">Clients</h2>
         <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-      </div>
+  -->    </div> 
     </div>
     <div class="parallax-container" style="height: 100px;">
       <div class="parallax"><img src="img/home/Automated Strap making section.jpg"></div>
@@ -214,7 +214,7 @@
         $kolom = 5;
         $i = 1;
         $upload_dir = 'img/achievement/';
-        $sqlEvent = "SELECT * FROM tabel_achi ORDER BY idAchi DESC LIMIT 4";
+        $sqlEvent = "SELECT * FROM tabel_achi ORDER BY id DESC LIMIT 4";
         $rslt = mysqli_query($kon, $sqlEvent);
         while ($data = mysqli_fetch_array($rslt)) {
 
@@ -223,8 +223,8 @@
           }
 
           echo '<td>
-                <img src=' . $upload_dir . $data["fotoAchi"], ' class="responsive-img materialboxed", width="200px"/>
-                <p class="center" style="font-weight: bold">' . $data['namaAchi'] . '</p>
+                <img src=' . $upload_dir . $data["image"], ' class="responsive-img materialboxed", width="200px"/>
+                <p class="center" style="font-weight: bold">' . $data['name'] . '</p>
                 </td>';
 
           if (($i) % $kolom == 0) {
